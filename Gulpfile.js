@@ -21,8 +21,8 @@ gulp.task("webpack:build", function(callback) {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({
-      chunks: [],
-      template: path.resolve('./src/index.html'),
+      chunks: ['vendor', 'app'],
+      template: path.resolve('./src/template.html'),
       filename: path.resolve('./assets/index.html')
     })
   )
